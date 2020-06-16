@@ -25,10 +25,10 @@ class Student
     # return a new instance of the Student class
     sql = <<-SQL
       SELECT * FROM students
-      WHERE name = ?
+      WHERE name = ? LIMIT 1;
     SQL
     
-    DB[:conn].execute(sql, name).map{|
+    DB[:conn].execute(sql, name).map{|row| 
   end
   
   def save
