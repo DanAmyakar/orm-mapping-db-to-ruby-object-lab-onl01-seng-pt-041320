@@ -55,7 +55,7 @@ class Student
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}
   end
   
-  def self.first_x_students_in_grade_10(x)
+  def self.first_X_students_in_grade_10(x)
     
     # find the student in the database given a name
     # return a new instance of the Student class
