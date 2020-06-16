@@ -4,13 +4,15 @@ class Student
   def self.new_from_db(row)
     # create a new Student object given a row from the database
     student = self.new(row)
-    student.id = row(0)
-    student.name = row(1)
+    student.id = row[0]
+    student.name = row[1]
+    student.grade = row[2]
   end
 
   def self.all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
+    
   end
 
   def self.find_by_name(name)
