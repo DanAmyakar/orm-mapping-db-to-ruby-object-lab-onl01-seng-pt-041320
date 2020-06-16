@@ -32,7 +32,7 @@ class Student
   def self.all_students_in_grade_9
     sql = <<-SQL
       SELECT * FROM students
-      WHERE grade = 9 ORDER BY id LIMIT 1;
+      WHERE grade = 9;
     SQL
     
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}
@@ -59,7 +59,7 @@ class Student
   def self.first_student_in_grade_10
     sql = <<-SQL
       SELECT * FROM students
-      WHERE grade = 10 LIMIT 1;
+      WHERE grade = 10 ORDER BY id LIMIT 1;
     SQL
     
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}
