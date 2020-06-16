@@ -34,6 +34,7 @@ class Student
   def self.all_students_in_grade_9
     # find the student in the database given a name
     # return a new instance of the Student class
+    
     sql = <<-SQL
       SELECT * FROM students
       WHERE grade = 9;
@@ -42,7 +43,8 @@ class Student
     DB[:conn].execute(sql).map{|row| self.new_from_db(row)}
   end
   
-  def self.all_students_in_grade_9
+  def self.all_students_under_grade_12
+    
     # find the student in the database given a name
     # return a new instance of the Student class
     sql = <<-SQL
